@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phaneendra Vantapati - Portfolio</title>
+
+<!-- Bootstrap 4.6.2 -->
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+<style>
+  :root{
+    --bg-1: #0d1117;
+    --bg-2: #111827;
+    --accent: #00d4ff;
+    --muted-white: rgba(255,255,255,0.9);
+  }
+
+  body{
+    background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+  }
+
+  /* =============== NAVBAR (EXACTLY SAME AS ABOUT PAGE) =============== */
+  .navbar{
+    padding: 12px 20px;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(6px);
+  }
+
+  .navbar-brand{
+    color: var(--accent) !important;
+    font-weight: 600;
+    font-size: 1.15rem;
+  }
+
+  .nav-link{
+    color: #fff !important;
+    font-weight: 500;
+    margin-left: 14px;
+    transition: 0.25s;
+  }
+
+  .nav-link:hover{
+    color: var(--accent) !important;
+  }
+
+  /* Toggler */
+  .navbar-toggler{
+    border: none !important;
+    padding: 8px 10px;
+    border-radius: 4px;
+  }
+
+  .navbar-toggler-icon{
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+  }
+
+  /* same blur when expanded on mobile */
+  @media (max-width: 768px){
+    .navbar.show-blur{
+      background: rgba(0,0,0,0.55) !important;
+      backdrop-filter: blur(12px);
+    }
+  }
+
+  /* =============== HERO SECTION =============== */
+  .hero{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+  }
+
+  .hero h1{
+    font-size: 42px;
+    font-weight: 700;
+    animation: fadeDown 1s ease;
+  }
+
+  .hero p{
+    font-size: 18px;
+    margin: 20px 0;
+    opacity: 0.85;
+    animation: fadeDown 1.2s ease;
+  }
+
+  @keyframes fadeDown{
+    0%{ opacity:0; transform: translateY(-20px); }
+    100%{ opacity:1; transform: translateY(0); }
+  }
+
+  .cv-btn{
+    background: var(--accent);
+    padding: 12px 26px;
+    border-radius:32px;
+    color:#000;
+    border:none;
+    font-weight:600;
+    transition:0.3s;
+  }
+
+  .cv-btn:hover{
+    background:#fff;
+    transform: translateY(-3px);
+  }
+
+  .hero-img{
+    width: 310px;
+    height: 310px;
+    border-radius:50%;
+    object-fit:cover;
+    animation: floatImg 3s infinite ease-in-out;
+    border:4px solid rgba(255,255,255,0.2);
+    box-shadow:
+      0 0 25px rgba(0,212,255,0.6),
+      0 0 50px rgba(0,212,255,0.2),
+      inset 0 0 20px rgba(0,212,255,0.3);
+  }
+
+  @keyframes floatImg{
+    0%{ transform:translateY(0); }
+    50%{ transform:translateY(-10px); }
+    100%{ transform:translateY(0); }
+  }
+
+  @media(max-width:768px){
+    .hero{
+      text-align:center;
+      padding-top:120px;
+    }
+    .hero h1{
+      font-size:32px;
+    }
+    .hero-img{
+      width:250px;
+      height:250px;
+      margin-top:25px;
+    }
+  }
+
+</style>
+</head>
+
+<body>
+
+<!-- =============== NAVBAR (SAME AS ABOUT PAGE) =============== -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Portfolio</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link active" href="home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- =============== HOME CONTENT =============== -->
+<section id="home" class="hero">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-md-6">
+        <h1>Hi, I'm <span style="color:var(--accent)">Phaneendra Vantapati</span></h1>
+        <p>A passionate <b>Editor</b> crafting cinematic visuals, clean cuts, smooth transitions, and engaging stories.</p>
+
+        <a href="./PDF Files/PHANEENDRA VANTAPATI.pdf" download>
+          <button class="cv-btn">Download CV</button>
+        </a>
+      </div>
+
+      <div class="col-md-6 text-center">
+        <img src="./images/phani_img.jpeg" class="hero-img">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // same navbar blur effect
+  $('.navbar-toggler').on('click', function(){
+    $('.navbar').toggleClass('show-blur');
+  });
+</script>
+
+</body>
+</html>

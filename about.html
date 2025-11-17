@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About - Phaneendra Vantapati</title>
+
+<!-- Bootstrap 4.6.2 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+<style>
+  :root{
+    --bg-1: #0d1117;
+    --bg-2: #111827;
+    --accent: #00d4ff; /* teal */
+    --muted-white: rgba(255,255,255,0.9);
+    --card-bg: rgba(255,255,255,0.03);
+  }
+
+  body{
+    background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
+    color: white;
+    font-family: "Poppins", sans-serif;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+
+  /* ---------- NAVBAR (same as your Home) ---------- */
+  .navbar{
+    padding: 12px 20px;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(6px);
+  }
+
+  .navbar-brand{
+    color: var(--accent) !important;
+    font-weight: 600;
+    font-size: 1.15rem;
+  }
+
+  .nav-link{
+    color: #fff !important;
+    font-weight: 500;
+    margin-left: 14px;
+    transition: 0.25s;
+  }
+  .nav-link:hover{ color: var(--accent) !important; }
+
+  /* Toggler button - black with white lines */
+  .navbar-toggler{
+    border: none !important;
+    padding: 8px 10px;
+    border-radius: 4px;
+  }
+  .navbar-toggler-icon{
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+  }
+
+  /* Mobile: blur entire navbar when expanded */
+  @media (max-width: 768px) {
+    .navbar.show-blur{
+      background: rgba(0,0,0,0.55) !important;
+      backdrop-filter: blur(12px);
+    }
+  }
+
+  /* ---------- ABOUT SECTION ---------- */
+  .about-section{
+    padding: 90px 18px;
+  }
+
+  /* container card styling */
+  .about-card{
+    background: var(--card-bg);
+    border-radius: 14px;
+    padding: 28px;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 6px 30px rgba(0,0,0,0.6);
+    transition: transform .18s ease, box-shadow .18s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .about-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 18px 50px rgba(0,0,0,0.65);
+  }
+
+  .about-heading{
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+  }
+
+  .about-text{
+    color: rgba(255,255,255,0.92);
+    line-height: 1.7;
+    font-size: 1rem;
+    margin-bottom: 18px;
+    flex: 1 1 auto;
+  }
+
+  /* skills container */
+  .skills-wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .skill-row{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .skill-title{
+    display:flex;
+    justify-content: space-between;
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 0.96rem;
+  }
+
+  /* progress base */
+  .progress{
+    height: 16px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 999px;
+    overflow: visible; /* allow glow */
+    transition: transform .18s ease;
+  }
+
+  /* progress fill */
+  .progress-bar{
+    background: linear-gradient(90deg, rgba(0,212,255,0.95), rgba(0,180,220,0.95)) !important;
+    border-radius: 999px;
+    transition: width 1s cubic-bezier(.2,.9,.2,1), box-shadow .18s ease;
+    box-shadow: 0 6px 18px rgba(0,212,255,0.12);
+  }
+
+  /* hover effects on progress */
+  .progress:hover{
+    transform: translateY(-3px);
+  }
+  .progress:hover .progress-bar{
+    box-shadow: 0 12px 30px rgba(0,212,255,0.22), 0 0 20px rgba(0,212,255,0.12);
+  }
+
+  /* percentage bubble */
+  .pct-bubble{
+    font-size: 0.78rem;
+    color: white;
+    background: rgba(0,0,0,0.45);
+    padding: 4px 8px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+
+  /* ensure equal size columns on larger screens */
+  .row-eq> [class*='col-']{
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* small screens: stack */
+  @media (max-width: 768px){
+    .about-section{ padding: 50px 14px; }
+    .about-heading{ font-size: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR (same design as Home) -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Portfolio</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ABOUT SECTION -->
+<section class="about-section">
+  <div class="container">
+    <div class="row row-eq align-items-stretch">
+
+      <!-- LEFT: About Content (equal height card) -->
+      <div class="col-md-6 mb-4">
+        <div class="about-card h-100">
+          <div>
+            <div class="about-heading">About Me</div>
+            <div class="about-text">
+              I’m <strong style="color:var(--accent)">Phaneendra Vantapati</strong>,
+              a professional video editor passionate about crafting cinematic visuals,
+              storytelling, and high-quality post-production work.
+              <br><br>
+              I transform raw footage into emotionally engaging stories with clean
+              edits, smooth transitions, color grading and motion graphics — delivering
+              content that looks polished and professional across platforms.
+            </div>
+          </div>
+
+          <!-- optional small note or CTA - kept inside card bottom area -->
+          <div style="margin-top:12px;">
+            <a href="./PDF Files/PHANEENDRA VANTAPATI.pdf" class="btn" style="background:var(--accent); color:#000; font-weight:600; border-radius:26px; padding:10px 18px;">Download CV</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Skills (equal height card) -->
+      <div class="col-md-6 mb-4">
+        <div class="about-card h-100">
+          <div>
+            <div class="about-heading">My Skills</div>
+            <div style="color:rgba(255,255,255,0.9); margin-bottom:10px;">
+              Tools & software I use regularly — percentage shows my proficiency level.
+            </div>
+
+            <div class="skills-wrap mt-3">
+
+              <!-- Photoshop 90% -->
+              <div class="skill-row">
+                <div class="skill-title">
+                  <div>Photoshop</div>
+                  <div class="pct-bubble" id="pct-ps">90%</div>
+                </div>
+                <div class="progress" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-bar" role="progressbar" style="width: 0%" data-target="90" aria-valuenow="90"></div>
+                </div>
+              </div>
+
+              <!-- Premiere Pro 85% -->
+              <div class="skill-row">
+                <div class="skill-title">
+                  <div>Premiere Pro</div>
+                  <div class="pct-bubble" id="pct-pr">85%</div>
+                </div>
+                <div class="progress" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-bar" role="progressbar" style="width: 0%" data-target="85" aria-valuenow="85"></div>
+                </div>
+              </div>
+
+              <!-- After Effects 75% -->
+              <div class="skill-row">
+                <div class="skill-title">
+                  <div>After Effects</div>
+                  <div class="pct-bubble" id="pct-ae">75%</div>
+                </div>
+                <div class="progress" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-bar" role="progressbar" style="width: 0%" data-target="75" aria-valuenow="75"></div>
+                </div>
+              </div>
+
+            </div> <!-- skills-wrap -->
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- row -->
+  </div> <!-- container -->
+</section>
+
+<!-- Bootstrap JS (requires jQuery) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // Toggle navbar background blur (mobile) - matches previous implementation
+  (function(){
+    var toggler = document.querySelector('.navbar-toggler');
+    var navbar = document.querySelector('.navbar');
+
+    if(toggler && navbar){
+      toggler.addEventListener('click', function(){
+        navbar.classList.toggle('show-blur');
+      });
+    }
+  })();
+
+  // Animate progress bars from 0 -> target on DOMContentLoaded
+  document.addEventListener('DOMContentLoaded', function(){
+    // small delay so transition is visible
+    setTimeout(function(){
+      var bars = document.querySelectorAll('.progress-bar');
+      bars.forEach(function(bar){
+        var target = parseInt(bar.getAttribute('data-target')) || 0;
+        // set width -> CSS transition in .progress-bar will animate it
+        bar.style.width = target + '%';
+      });
+    }, 150);
+  });
+</script>
+
+</body>
+</html>
